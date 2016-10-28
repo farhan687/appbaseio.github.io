@@ -1,0 +1,11 @@
+{
+  "repos": {
+  	"EScompanion": ["Go"],
+    "transporter": ["Go"],
+    "mirage": ["JavaScript"],
+    "dejaVu": ["JavaScript"],
+    "docbase": ["JavaScript"]
+  },
+  "custom": [
+  ]
+}
