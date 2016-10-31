@@ -1,10 +1,12 @@
 {
   "repos": {
-  	"EScompanion": ["Go"],
-    "transporter": ["Go"],
+  	"go-appbase": ["Docs"],
     "mirage": ["JavaScript"],
     "dejaVu": ["JavaScript"],
-    "docbase": ["JavaScript"]
+    "gem": ["JavaScript"],
+    "docbase": ["JavaScript"],
+    "appbase-js": ["Docs"],
+    "Dochub": ["Docs"]
   },
   "custom": [
   ]
