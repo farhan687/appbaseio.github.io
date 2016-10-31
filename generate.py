@@ -74,7 +74,7 @@ context = {
 }
 
 # Loop over the category names sorted alphabetically (case-insensitive) with 'Other' last.
-for category_name in sorted(categories.keys(), key=lambda s: s.lower() if s is not 'Other' else 'z'*10):
+for category_name in sorted(categories.keys(), key=lambda s: 'a'*10 if s in ["JavaScript", "Javascript"] else s.lower()):
   data = {
     'name': category_name,
     'index': category_name.lower(),
