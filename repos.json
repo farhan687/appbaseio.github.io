@@ -1,13 +1,13 @@
 {
-  "repos": {
-  	"go-appbase": ["Docs"],
-    "mirage": ["JavaScript"],
-    "dejaVu": ["JavaScript"],
-    "gem": ["JavaScript"],
-    "docbase": ["JavaScript"],
-    "appbase-js": ["Docs"],
-    "Dochub": ["Docs"]
-  },
-  "custom": [
-  ]
+	"repos": {
+		"mirage": ["JavaScript"],
+		"dejavu": ["JavaScript"],
+		"gem": ["JavaScript"],
+		"Docbase": ["JavaScript"],
+		"Docs": ["Docs"],
+		"go-appbase": ["Docs"],
+		"appbase-js": ["Docs"]
+	},
+	"custom": [
+	]
 }
