@@ -14,14 +14,26 @@ repos_in = 'repos.json'
 index_in = 'index.mustache'
 index_out = 'index.html'
 
-auth = netrc.netrc()
+def getCredentials():
+  try:
+    MACHINE = os.environ['MACHINE'];
+    login = os.environ['LOGIN'];
+    password = os.environ['PASSWORD'];
+
+  except:  
+    auth = netrc.netrc();
+    (login, _, password) = auth.authenticators('api.github.com');
+  
+  return {'login': login, 'password': password};
+
+credentials = getCredentials();
+
 try:
-  (login, _, password) = auth.authenticators('api.github.com')
-  ghclient = Github(login=login, password=password)
-  logged_in = True
+  ghclient = Github(login=credentials.login, password=credentials.password);
+  logged_in = True;
 except:
-  ghclient = Github()
-  logged_in = False
+  ghclient = Github();
+  logged_in = False;
 
 def gh_repo(name):
   print('Fetching "%s" repo information...' % name)
