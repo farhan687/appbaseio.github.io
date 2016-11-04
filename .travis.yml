@@ -3,9 +3,15 @@ language: python
 python:
   - "2.7"
 
+# blocklist
+branches:
+  except:
+  - master
+
+# safelist
 branches:
   only:
-  - master
+  - dev
 
 install:
   - pip install pystache requests pygithub3
