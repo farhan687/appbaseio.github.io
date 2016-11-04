@@ -14,7 +14,10 @@ branches:
   - dev
 
 install:
-  - pip install pystache requests pygithub3
+  - pip install pystache requests pygithub3 pygit2
 
 script:
   - python generate.py
+
+after_script:
+  - python commit.py
