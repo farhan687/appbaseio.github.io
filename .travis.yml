@@ -1,7 +1,7 @@
 language: python
 
 python:
-  - "2.7"
+  - "3.5"
 
 # blocklist
 branches:
@@ -13,8 +13,21 @@ branches:
   only:
   - dev
 
+env:
+  # Github deployment key
+  - secure: "ptTAhJN1m7gDRyFWIQMVTovZKetTGAX9oW9m7tWalg/HzxhetAxs5qhP+gpTc4yQPUqnXOf8ljdBNFknZARKhcw8nK8KhveoEgGC2fdEJUJ9UljaMioZW61eaMOsDBOoXnDxz8k2+HSDD50zKG/J40W6ikLzQYifX5Mz3CC/ksaoYqrel2yNqaKa2rfIXnmWkwdgpuckVp6dkgeRnqKYjRwhOw0i4pbzHTY2EqV2DFh6mZ8noEqfajdWnLbygjyPSQsMh3CmcBz9seCgOpvBZxCQHZE9x31o4ctrkWVmm/X4eCOV75JK2Wf9yoIahcPRqY6l7Dvdm0YGfnQ1KDP/LYKXkXjW0SHTHWXUJC/P4SpXqZSyu0vHIXYRFlKaNFhoLWwzE9sKy417JBkCoNcRq4F8amRDtrpVsetHuCQvQgiIMIXakelKI92DSteDCH/gQVdWGTM5z6w/iuOQXSjHtuOzAi4bnESZdZk+guin+xNwSFC/VNd0GqVdiwwFe99uC2L2CklTtNPhUtkfrP1sEpdjnQ1AF7wPAbtpAEUZdJQ0CLhDQTMb3tmWBmCdSrEU/RsTXplHXPXwnnvJq6xt5YDioxHhnWfT3IPisKLRh7w48Z865DtgoJ5WURuUn1rZp1SY2bJfhN3rXo1laEQWPLqKd7xxZQJ8G0MRl66JwFQ="
+
 install:
-  - sudo apt-get install git
+  - pip install pystache requests pygithub3
+
+sudo: false
+
+cache: pip
 
 script:
-  - python shellcommit.py
+  - python generate.py
+  
+after_success:
+  - "curl -o /tmp/travis-automerge https://raw.githubusercontent.com/appbaseio/appbaseio.github.io/master/travis-automerge"
+  - "chmod a+x /tmp/travis-automerge"
+  - "BRANCHES_TO_MERGE_REGEX='^dev/' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=appbaseio/appbaseio.github.io /tmp/travis-automerge"
