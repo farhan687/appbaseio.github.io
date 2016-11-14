@@ -1,7 +1,7 @@
 language: python
 
 python:
-  - "3.5"
+  - "2.7"
 
 # blocklist
 branches:
@@ -26,7 +26,7 @@ cache: pip
 
 script:
   - python generate.py
-  
+
 after_success:
   - "curl -o /tmp/travis-automerge https://raw.githubusercontent.com/appbaseio/appbaseio.github.io/master/travis-automerge"
   - "chmod a+x /tmp/travis-automerge"
