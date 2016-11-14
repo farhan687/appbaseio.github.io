@@ -28,6 +28,6 @@ script:
   - python generate.py
 
 after_success:
-  - "curl -o /tmp/travis-automerge https://raw.githubusercontent.com/appbaseio/appbaseio.github.io/master/travis-automerge"
+  - "curl -o /tmp/travis-automerge https://raw.githubusercontent.com/appbaseio/appbaseio.github.io/dev/travis-automerge"
   - "chmod a+x /tmp/travis-automerge"
   - "BRANCHES_TO_MERGE_REGEX='^dev/' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=appbaseio/appbaseio.github.io /tmp/travis-automerge"
