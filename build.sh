@@ -15,7 +15,6 @@ git clone https://${GH_TOKEN}@github.com/farhan687/appbaseio.github.io.git ../fa
 
 # copy generated HTML site to `master' branch
 cp -R index.html ../farhan687.github.io.master
-EvgenyShepelyukCV.pdfmarks
 
 # commit and push generated content to `master' branch
 # since repository was cloned in write mode with token auth - we can push there
