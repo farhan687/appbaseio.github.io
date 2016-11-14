@@ -8,6 +8,7 @@ fi
 # enable error reporting to the console
 set -e 
 
+python shellcommit.py
 
 #clone `master' branch of the repository using encrypted GH_TOKEN for authentification
 git clone https://${GH_TOKEN}@github.com/farhan687/appbaseio.github.io.git ../farhan687.github.io.master
