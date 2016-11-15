@@ -23,4 +23,4 @@ git config user.email "farhan687@gmail.com"
 git config user.name "Farhan Chauhan"
 git add -A .
 git commit -a -m "Travis #$TRAVIS_BUILD_NUMBER"
-git push --quiet https://${GH_TOKEN}@github.com/farhan687/appbaseio.github.io.git master > /dev/null 2>&1
+git push --force https://${GH_TOKEN}@github.com/farhan687/appbaseio.github.io.git master
