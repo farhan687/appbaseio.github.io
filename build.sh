@@ -23,4 +23,4 @@ git config user.email "farhan687@gmail.com"
 git config user.name "Farhan Chauhan"
 git add -A .
 git commit -a -m "Travis #$TRAVIS_BUILD_NUMBER"
-git push origin master
+git push -q upstream HEAD:master
